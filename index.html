@@ -39,7 +39,7 @@
         <div >
             <button value="00" class="btn btn-dark">00</button>
             <button value="0"  class="btn btn-dark ">0</button>
-            <button value="=" id="equal" class="btn btn-dark " onclick="myFunction()">=</button>
+            <button value="=" id="equal" class="btn btn-dark " onclick="display()">=</button>
         </div>
     </div>
 
@@ -47,10 +47,14 @@
 
     <script>
 
-
-        function myFunction(){
-        input.value = eval(input.value);
-        setTimeout(() => input.value=" ",700);
+        function display(){
+            try{
+                input.value = eval(input.value);
+                setTimeout(() => input.value=" ",700);
+            }catch(error){
+                input.value = "undefined";
+                setTimeout(() => input.value=" ",700);
+            }
         }
 
     </script>
